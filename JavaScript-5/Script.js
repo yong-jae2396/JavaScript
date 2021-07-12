@@ -60,7 +60,6 @@ console.log(ellie.random);  //정의하지 않은 key를 호출한 결과
 // 5. for..in  vs  for..of
 
 // for (key in object)
-console.clear();
 for (key in ellie) {
     console.log(key);
 }
@@ -72,3 +71,30 @@ for (value of array) {
     console.log(value);
 }
 
+
+
+// 6. Fun cloning
+
+const user = {name : 'ellie', age : '20'};
+const user2 = user;
+user2.name = 'coder';
+
+console.log(user);
+
+// old way
+const user3 = {};
+for (let key in user) {
+  user3[key] = user[key];
+}
+console.clear();
+console.log(user3);
+
+const user4 = Object.assign({}, user);
+console.log(user4);
+
+// another example
+const fruit1 = { color: 'red' };
+const fruit2 = { color: 'blue', size: 'big' };
+const mixed = Object.assign({}, fruit1, fruit2);
+console.log(mixed.color);
+console.log(mixed.size);

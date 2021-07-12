@@ -99,3 +99,43 @@ for (value of array) {
 }
 ```
 
+****
+
+### 7. Fun cloning
+
+* Object.assign(dest,  [obj1, obj2, obj3...])
+
+```javascript
+const user = {name : 'ellie', age : '20'};
+const user2 = user;
+user2.name = 'coder'; // key값을 수정
+
+console.log(user);
+```
+
+* **old way**
+
+```javascript
+const user3 = {};
+for (let key in user) {
+  user3[key] = user[key];
+}
+console.clear();
+console.log(user3);
+
+const user4 = Object.assign({}, user);
+console.log(user4);
+```
+
+* **another example**
+  * value는 뒤에 들어오는 것으로 덮어 씌어진다.
+
+```javascript
+const fruit1 = { color: 'red' };
+const fruit2 = { color: 'blue', size: 'big' };
+const mixed = Object.assign({}, fruit1, fruit2);
+console.log(mixed.color);
+console.log(mixed.size);
+```
+
+****
