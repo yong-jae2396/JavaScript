@@ -8,7 +8,7 @@
 
 // Q2. make an array out of a string
 {
-	const fruits = '🍎, 🥝, 🍌, 🍒';
+	const fruits = '??, ??, ??, ??';
 	const result = fruits.split(',', 3); 
 	console.log(result);
 }
@@ -47,16 +47,21 @@ const students = [
 
 // Q5. find a student with the score 90
 {
-	console.log(this.name);
+	const result = students.find((student, index) => student.score === 90);
+	console.log(result);
 }
 
 // Q6. make an array of enrolled students
 {
+	const result = students.filter((students) => students.enrolled);
+	console.log(result);
 }
 
 // Q7. make an array containing only the students' scores
 // result should be: [45, 80, 90, 66, 88]
 {
+	const result = students.map((students) => students.score); 
+	console.log(result);
 }
 
 // Q8. check if there is a student with the score lower than 50

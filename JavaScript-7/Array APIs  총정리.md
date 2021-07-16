@@ -71,4 +71,103 @@
 
 ****
 
-### 5. 
+### 5. find()
+
+* 배열에서 특정 값을 찾는 조건을 callback 함수를 통해 전달하여, 조건에 맞는 값 중 **첫번째 값을 리턴**합니다.
+
+* 만약 만족하는 값이 없을 경우 undefined를 반환합니다.
+
+* 사용법 : array.find(callback, element)
+
+* callback에서 사용자가 특정 값을 찾을 조건을 정의
+
+* 조건의 부합하는 값을 찾을 경우 이후의  배열값을 테스트하지 않는다.
+
+* **참고 : callback 함수의 조건에 부합하는 배열의 첫번째 index값을 알아내기 위해서는 findindex()를 사용** 
+
+  ```javascript
+  // 예제
+  class Student {
+    constructor(name, age, enrolled, score) {
+      this.name = name;
+      this.age = age;
+      this.enrolled = enrolled;
+      this.score = score;
+    }
+  }
+  const students = [
+    new Student('A', 29, true, 45),
+    new Student('B', 28, false, 80),
+    new Student('C', 30, true, 90),
+    new Student('D', 40, false, 66),
+    new Student('E', 18, true, 88),
+  ];
+  
+  const result = students.find((student, index) => student.score === 90); // arrow방식
+  console.log(result); // 결과 값
+  ```
+
+****
+
+### 6. filter()
+
+* filter() 함수는 특정 조건에 부합하는 배열의 **모든 값을 배열 형태로 리턴**합니다.
+
+* calllback 함수에 정의한 조건에 부합하는 배열의 보든 값을 새로운 배열의 형태로 리턴한다.
+
+* 조건에 부합하는 배열 값이 없을 경우 빈 배열을 리턴한다.
+
+  ```javascript
+  // 예제
+  class Student {
+    constructor(name, age, enrolled, score) {
+      this.name = name;
+      this.age = age;
+      this.enrolled = enrolled;
+      this.score = score;
+    }
+  }
+  const students = [
+    new Student('A', 29, true, 45),
+    new Student('B', 28, false, 80),
+    new Student('C', 30, true, 90),
+    new Student('D', 40, false, 66),
+    new Student('E', 18, true, 88),
+  ];
+  
+  const result = students.filter((students) => students.enrolled); 
+  console.log(result); // 결과 값
+  ```
+
+****
+
+### 7. map()
+
+*  callbackFunction을 실행한 결과를 가지고 새로운 배열을 만들 때 사용한다.
+
+* 사용법 : array.map((currentValue , index, array) => {return 요소});
+
+  ```javascript
+  //예제
+  class Student {
+    constructor(name, age, enrolled, score) {
+      this.name = name;
+      this.age = age;
+      this.enrolled = enrolled;
+      this.score = score;
+    }
+  }
+  const students = [
+    new Student('A', 29, true, 45),
+    new Student('B', 28, false, 80),
+    new Student('C', 30, true, 90),
+    new Student('D', 40, false, 66),
+    new Student('E', 18, true, 88),
+  ];
+  
+  const result = students.map((students) => students.score); // 맵핑
+  console.log(result); // 결과 값
+  ```
+
+****
+
