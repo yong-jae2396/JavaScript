@@ -66,18 +66,57 @@ const students = [
 
 // Q8. check if there is a student with the score lower than 50
 {
+	// 값들중 조건을 충족하는 값이 하나라도 있으면 true가 나온다.
+	const result = students.some((students) => students.score < 50); 
+	console.log(result);	
+	
+	// 모든 값이 조건을 충족해야 true가 나온다
+	const result2 = !students.every((students) => students.score >= 50); 
+	console.log(result2);	
 }
 
 // Q9. compute students' average score
 {
+	console.clear();
+	const result = students.reduce((a, b) =>{
+		console.log(a);
+		console.log(b);
+		return a + b.score;
+	}, 0);
+	console.log(result / students.length);
 }
 
 // Q10. make a string containing all the scores
 // result should be: '45, 80, 90, 66, 88'
 {
+	const result = students.map((students) => students.score)
+	console.log(String(result));
 }
 
 // Bonus! do Q10 sorted in ascending order
 // result should be: '45, 66, 80, 88, 90'
 {
+	console.clear();
+	const result = students.map((students) => students.score)
+	.sort(function(a, b){
+		return b - a;
+	});
+	console.log(result);
+//	let j = 0;
+//	let sum = [];
+//	for (let number = 0; number < students.length; number++) {	
+//		j++;
+//		if (result[number] < result[j]) {
+//			sum.push(result[number]);
+//			sum.push(result[j]);
+//		}
+//		
+//		else {
+//			sum.push(result[j]);
+//			sum.push(result[number]);
+//		}
+//		console.log(sum);
+//	}
+//	console.log(sum);
+//	
 }

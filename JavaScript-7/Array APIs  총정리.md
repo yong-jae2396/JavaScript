@@ -171,3 +171,68 @@
 
 ****
 
+### 8. some(), every()
+
+* some()은 배열의 요소 중 하나라도 callbackFunction에서 true를 리턴하면 true를 리턴한다.
+
+* every()는 배열의 모든 요소가 callbackFunction에서 true를 리턴해야 true를 리턴, 하나라도 false면 false.
+
+  ````javascript
+  // 값들중 조건을 충족하는 값이 하나라도 있으면 true가 나온다.
+  const result = students.some((students) => students.score < 50); 
+  console.log(result); // 결과 값
+  	
+  // 모든 값이 조건을 충족해야 true가 나온다
+  const result2 = !students.every((students) => students.score >= 50); 
+  console.log(result2); // 결과 값
+  ````
+
+****
+
+### 9. reduce()
+
+* 사용법 : array.reduce( (prev, curr, index, array))
+
+* previousvalue : 마지막 callback에서 반환된 값 또는  initialValue(초기값)
+
+* currentValue : 현재 배열 내 처리되고 있는 요소
+
+* currentIndex : 현재 배열 내 처리되고 있는 요소의 index
+
+* array : reduce 호출에 사용되는 원 배열
+
+  ```javascript
+  	console.clear();
+  	const result = students.reduce((a, b) =>{
+  		console.log(a);
+  		console.log(b);
+  		return a + b.score;
+  	}, 0);
+  	console.log(result / students.length); // 결과 값 평균낸거
+  }
+  ```
+
+****
+
+### 10. sort()
+
+* 배열 안에 원소를 정렬하는 함수이다.
+* 요소 순서를 결정하는 sortFunction을 생략하면 기본적으로 오름차순이 된다.
+
+```javascript
+// 오름 차순 정렬
+const result = students.map((students) => students.score)
+.sort(function(a, b){
+	return a - b;
+});
+console.log(result);
+
+// 내림 차순 정렬
+const result = students.map((students) => students.score)
+.sort(function(a, b){
+	return b - a;
+});
+console.log(result);
+```
+
+****
