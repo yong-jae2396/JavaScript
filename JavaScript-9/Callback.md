@@ -45,3 +45,64 @@ printWithDelay(() => console.log('async callback'), 2000);
 
 ****
 
+### 3. Callback Hell example
+
+```javascript
+// class 생성
+class UserStorage {
+	loginUser(id, password, onSuccess, onError) {
+		setTimeout(() => {
+            // id, password 검사
+			if(
+			(id === 'ellie' && password === 'dream') ||
+			(id === 'coder' && password === 'academy')
+			) {
+				onSuccess(id);
+			} 
+            // id 와 password가 적합하지 않을경우 실행
+            else {
+				onError(new Error('not found'));
+			}
+		}, 2000);
+	}
+	// id를 검사하여 사용자의 역할을 출력
+	getRoles(user, onSuccess, onError) {
+		setTimeout(() =>{
+			if (user === 'ellie') {
+				onSuccess({name: 'ellie', role: 'admin'});
+			}
+			
+			else{
+				onError(new Error('no access'));
+			}
+		}, 1000);
+	}
+}
+
+const userStorage = new UserStorage();
+const id = prompt('enter your id');
+const password = prompt('enter your password');
+userStorage.loginUser(
+	id, 
+	password, 
+	user => {
+		userStorage.getRoles(
+			user, 
+			(userWithRole) => {
+				alert(
+                    `Hello ${userWithRole.name}, you have a ${userWithRole.role} role`
+                );
+		},
+			error => {
+				console.log(error);
+			}
+		);
+	}, 
+	error => {console.log(error)}
+);
+```
+
+
+
+
+
