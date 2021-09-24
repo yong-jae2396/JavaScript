@@ -95,7 +95,7 @@ if(!Number.isNaN(theNumber)) {
 
 ###  4. switch
 
-* switch로 시작한 블록에는 여러 개의 case레이블을 포함할 수 있따.
+* switch로 시작한 블록에는 여러 개의 case레이블을 포함할 수 있다.
 
 * 예제 
 
