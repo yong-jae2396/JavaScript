@@ -1,8 +1,0 @@
--- 객체(Object) --
-
-1. 연관배열(associative array)
-2. 맵(map)
-3. 딕셔너리(Dictionary)
-
-- 객체 안에는 여러 type의 데이터를 넣을 수 있다 (정수, 문자, 함수 등등)
-  * for문 활용도 가능 
