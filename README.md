@@ -1,1 +1,1 @@
-# JavaScript 문법정리
+# 모던 JavaScript 정리
